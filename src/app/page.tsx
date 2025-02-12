@@ -1,16 +1,16 @@
-import Image from "next/image";
-import Hero_section from "./_components/hero-section";
-import ContactPage from "./_components/contact"; 
+
+import HeroSection from "../components/hero-section";
 import Services from "./services/page";
-import Work from "./work/page";
+import ContactPage from "./contact/page";
+import Project from "./project/page";
 
 export default function Home() {
   return (
     <main>
       <div>
-          <Hero_section/>
+          <HeroSection/>
           <Services/>
-          <Work/>
+          <Project/>
           <ContactPage/>
       </div>
     </main>

@@ -18,13 +18,12 @@ import {
 } from "@/components/ui/tooltip";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
-import { li } from "framer-motion/client";
 
 // About Data
 const about = {
   title: "About Me",
   description:
-    "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla eveniet dicta sint fugit, aliquid commodi ullam dolor pariatur",
+    "I am a passionate frontend developer and UI/UX designer with expertise in creating user-friendly, responsive, and visually appealing digital experiences. I thrive on problem-solving, innovation, and continuous learning to deliver impactful solutions.",
   info: [
     {
       fieldName: "Name",
@@ -66,7 +65,7 @@ const experience = {
   icon: "",
   title: "My Experience",
   description:
-    "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla eveniet dicta sint fugit, aliquid commodi ullam dolor pariatur",
+    "Experienced in frontend development, UI/UX design, and web development, specializing in user-friendly designs, website optimization, and digital solutions.",
   items: [
     {
       company: "Royal dates Limited",
@@ -96,7 +95,7 @@ const education = {
   icon: "",
   title: "My Education",
   description:
-    "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla eveniet dicta sint fugit, aliquid commodi ullam dolor pariatur",
+    "Background in Science, Home Economics, and IT, holding a B.A. in Home Economics from Karachi University. Currently pursuing a Web 3 and Metaverse course to expand expertise in modern technologies.",
   items: [
     {
       institude: "Matric Board, Karachi.",
@@ -127,42 +126,42 @@ const education = {
 
 //  Skills Data
 const skill = {
-  title: "My Education",
+  title: "My Skills",
   description:
-    "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla eveniet dicta sint fugit, aliquid commodi ullam dolor pariatur",
+    "I possess strong analytical, communication, and problem-solving skills. My expertise includes marketing strategies, business development, and data analysis. I am adaptable, efficient in time management, and excel in teamwork.",
   skillList: [
     {
-      icon: <FaHtml5/>,
+      icon: <FaHtml5 />,
       name: "html 5",
     },
     {
-      icon: <FaCss3/>,
+      icon: <FaCss3 />,
       name: "css 3",
     },
     {
-      icon: <FaJs/>,
+      icon: <FaJs />,
       name: "javascript",
     },
     {
-      icon: <FaFigma/>,
+      icon: <FaFigma />,
       name: "figma",
     },
     {
-      icon: <FaReact/>,
+      icon: <FaReact />,
       name: "react.js",
     },
     {
-      icon: <SiNextdotjs/>,
+      icon: <SiNextdotjs />,
       name: "next.js",
     },
     {
-      icon: <SiTailwindcss/>,
+      icon: <SiTailwindcss />,
       name: "tailwind.css",
     },
     {
-      icon: <FaNodeJs/>,
+      icon: <FaNodeJs />,
       name: "node.js",
-    }
+    },
   ],
 };
 
@@ -203,7 +202,7 @@ export default function Resume() {
                       return (
                         <li
                           key={index}
-                          className="bg-secondary h-[184px py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1] "
+                          className="bg-secondary h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1] "
                         >
                           <span className="text-accent">{item.duration} </span>
                           <h3 className="text-xl max-w-[260px] min h-[60px] text-center lg:text-left ">
@@ -262,7 +261,9 @@ export default function Resume() {
               <div className="flex flex-col gap-[30px]">
                 <div className="flex flex-col gap-[30px] text-center xl:text-left">
                   <h3 className="text-4xl font-bold">{skill.title}</h3>
-                  <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{skill.description}</p>
+                  <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                    {skill.description}
+                  </p>
                 </div>
                 <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
                   {skill.skillList.map((skill, index) => {
@@ -271,7 +272,9 @@ export default function Resume() {
                         <TooltipProvider delayDuration={100}>
                           <Tooltip>
                             <TooltipTrigger className="w-full h-[150px] bg-secondary rounded-xl flex justify-center items-center group">
-                              <div className="text-6xl group-hover:text-accent transition-all duration-300">{skill.icon}</div>
+                              <div className="text-6xl group-hover:text-accent transition-all duration-300">
+                                {skill.icon}
+                              </div>
                             </TooltipTrigger>
                             <TooltipContent>
                               <p className="capitalize">{skill.name}</p>
@@ -286,14 +289,22 @@ export default function Resume() {
             </TabsContent>
 
             {/* About */}
-            <TabsContent value="about me" className="w-full text-center xl:text-left">
+            <TabsContent
+              value="about me"
+              className="w-full text-center xl:text-left"
+            >
               <div className="flex flex-col gap-[30px]">
                 <h3 className="text-4xl font-bold">{about.title}</h3>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{about.description}</p>
+                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                  {about.description}
+                </p>
                 <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0">
-                  {about.info.map((item, index) =>{
-                    return(
-                      <li key={index} className="flex items-center justify-center xl:justify-start gap-4">
+                  {about.info.map((item, index) => {
+                    return (
+                      <li
+                        key={index}
+                        className="flex items-center justify-center xl:justify-start gap-4"
+                      >
                         <span className="text-white/60">{item.fieldName}</span>
                         <span className="text-xl">{item.fieldValue}</span>
                       </li>

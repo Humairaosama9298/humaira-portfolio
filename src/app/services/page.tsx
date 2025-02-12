@@ -3,7 +3,6 @@ import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { div } from 'framer-motion/client';
 import {  ArrowRight } from 'lucide-react';
 
 const services = [
@@ -56,7 +55,7 @@ export default function Services() {
               initial={{ opacity:0}}
               animate={{
                 opacity:1,
-                transition:{delay: 2.4, duration: 0.4, ease: "easeIn"},
+                transition:{delay: 1.5, duration: 0.2, ease: "easeIn"},
               }}
               className='grid grid-cols-1 md:grid-cols-2 gap-[60px]'>
                 {services.map((service, index) => {
